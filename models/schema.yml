@@ -48,3 +48,5 @@ models:
           column_name:
             - paid_source
             - campaign_name
+
+
