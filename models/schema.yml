@@ -1,14 +1,17 @@
 version: 2
 
-sources:
-  - name: raw
-    schema: gz_raw_data
+sources: 
+  - name: raw_data_circle
+    description: data circle dataset
     tables:
-      - name: sales
-        identifier: raw_gz_sales
-
-      - name: product
-        identifier: raw_gz_product
+      - name: raw_cc_stock
+        description: cc stock 
+      
+      - name: raw_cc_sales
+        description: cc sales 
+        tests:
+          - unique: 
+              column_name: "(product_id || '_' || date_date)"
 
       - name: ship
         identifier: raw_gz_ship
